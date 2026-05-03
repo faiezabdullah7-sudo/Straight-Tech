@@ -1,0 +1,3467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straight Technologies — YIZUMI Injection Molding & Plastic Machinery Bangladesh</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --navy: #0a1628;
+            --navy2: #122040;
+            --navy3: #1a2f55;
+            --red: #c0392b;
+            --red2: #e74c3c;
+            --red3: #fdecea;
+            --teal: #1e7fa8;
+            --teal2: #2ea8d8;
+            --teal3: #e6f4fa;
+            --gold: #c8963e;
+            --gold2: #e8b96a;
+            --gold3: #fdf6ec;
+            --white: #fff;
+            --off: #f7f5f2;
+            --light: #eef1f5;
+            --muted: #6b7280;
+            --border: #e2e8f0;
+            --shadow: 0 4px 24px rgba(10, 22, 40, .10);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 72px
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--off);
+            color: var(--navy);
+            overflow-x: hidden
+        }
+
+        /* ── TYPOGRAPHY ── */
+        .serif {
+            font-family: 'Georgia', serif
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 300;
+            background: rgba(10, 22, 40, .97);
+            backdrop-filter: blur(16px);
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4%;
+            border-bottom: 1px solid rgba(30, 127, 168, .25);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+            flex: 1;
+            justify-content: center
+        }
+
+        .nav-links>li {
+            position: relative
+        }
+
+        .nav-links>li>a {
+            color: rgba(255, 255, 255, .75);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 8px 14px;
+            border-radius: 5px;
+            display: block;
+            white-space: nowrap;
+            transition: color .2s, background .2s;
+        }
+
+        .nav-links>li>a:hover,
+        .nav-links>li.active>a {
+            color: var(--teal2);
+            background: rgba(30, 127, 168, .08)
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            background: var(--navy2);
+            border: 1px solid rgba(30, 127, 168, .2);
+            border-radius: 10px;
+            padding: 8px;
+            min-width: 280px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .4);
+            z-index: 400;
+        }
+
+        .dropdown.multi {
+            min-width: 680px;
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0
+        }
+
+        .nav-links>li:hover .dropdown {
+            display: block
+        }
+
+        .nav-links>li:hover .dropdown.multi {
+            display: grid
+        }
+
+        .dropdown a {
+            display: block;
+            color: rgba(255, 255, 255, .7);
+            text-decoration: none;
+            font-size: 12.5px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background .15s, color .15s;
+            line-height: 1.4;
+        }
+
+        .dropdown a:hover {
+            background: rgba(30, 127, 168, .15);
+            color: white
+        }
+
+        .dd-col {
+            padding: 10px
+        }
+
+        .dd-col-title {
+            font-size: 10px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--teal2);
+            margin-bottom: 8px;
+            padding: 0 12px
+        }
+
+        .nav-cta {
+            background: var(--teal);
+            color: white !important;
+            border-radius: 6px;
+            padding: 9px 18px !important;
+            font-size: 12.5px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: background .2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--teal2) !important
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: all .3s
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 66px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--navy);
+            z-index: 299;
+            overflow-y: auto;
+            flex-direction: column;
+            padding: 20px 4%;
+        }
+
+        .mobile-nav.open {
+            display: flex
+        }
+
+        .mobile-nav a {
+            color: rgba(255, 255, 255, .8);
+            text-decoration: none;
+            font-size: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+        }
+
+        .mob-section-title {
+            font-size: 10px;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--teal2);
+            margin: 20px 0 6px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            padding-top: 66px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(30, 127, 168, .06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 127, 168, .06) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(30, 127, 168, .09) 0, transparent 65%);
+            top: -200px;
+            right: -200px;
+            pointer-events: none
+        }
+
+        .hero-glow2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(192, 57, 43, .07) 0, transparent 65%);
+            bottom: -100px;
+            left: -100px;
+            pointer-events: none
+        }
+
+        .hero-inner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 70px 4% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            gap: 72px;
+        }
+
+        .hero-left {
+            flex: 1.15
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 127, 168, .12);
+            border: 1px solid rgba(30, 127, 168, .3);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--teal2);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--red);
+            border-radius: 50%;
+            flex-shrink: 0
+        }
+
+        .hero-title {
+            font-family: 'Georgia', serif;
+            font-size: clamp(38px, 5.5vw, 70px);
+            font-weight: 400;
+            line-height: 1.06;
+            color: white;
+            margin-bottom: 10px
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--red2)
+        }
+
+        .hero-sub {
+            font-family: 'Georgia', serif;
+            font-size: clamp(17px, 2vw, 24px);
+            font-weight: 400;
+            color: rgba(255, 255, 255, .4);
+            margin-bottom: 22px
+        }
+
+        .hero-desc {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, .58);
+            max-width: 500px;
+            margin-bottom: 36px
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: all .2s;
+            font-family: inherit
+        }
+
+        .btn-teal {
+            background: var(--teal);
+            color: white
+        }
+
+        .btn-teal:hover {
+            background: var(--teal2);
+            transform: translateY(-1px)
+        }
+
+        .btn-red {
+            background: var(--red);
+            color: white
+        }
+
+        .btn-red:hover {
+            background: var(--red2);
+            transform: translateY(-1px)
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgba(255, 255, 255, .75);
+            border: 1px solid rgba(255, 255, 255, .2)
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255, 255, 255, .5);
+            color: white
+        }
+
+        .btn-navy {
+            background: var(--navy);
+            color: white
+        }
+
+        .btn-navy:hover {
+            background: var(--teal)
+        }
+
+        .hero-right {
+            flex: .9;
+            display: flex;
+            justify-content: center
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(30, 127, 168, .22);
+            border-radius: 14px;
+            padding: 28px;
+            width: 100%;
+            max-width: 370px
+        }
+
+        .partner-lbl {
+            font-size: 10px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .3);
+            margin-bottom: 12px
+        }
+
+        .yizumi-box {
+            background: white;
+            border-radius: 8px;
+            padding: 14px 22px;
+            margin-bottom: 20px;
+            text-align: center
+        }
+
+        .yizumi-big {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .06em
+        }
+
+        .yizumi-sm {
+            font-size: 10px;
+            color: var(--muted);
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .hstat {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            padding: 14px
+        }
+
+        .hstat-n {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            color: var(--teal2);
+            line-height: 1;
+            margin-bottom: 4px
+        }
+
+        .hstat-l {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .38);
+            letter-spacing: .05em
+        }
+
+        /* ── TICKER ── */
+        .ticker {
+            background: var(--teal);
+            padding: 10px 0;
+            overflow: hidden
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: tick 28s linear infinite;
+            white-space: nowrap
+        }
+
+        .ticker-item {
+            font-size: 11px;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 500;
+            padding: 0 32px
+        }
+
+        .ticker-sep {
+            color: rgba(255, 255, 255, .35);
+            margin: 0 6px
+        }
+
+        @keyframes tick {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* ── SECTION COMMON ── */
+        .section {
+            padding: 90px 4%
+        }
+
+        .si {
+            max-width: 1240px;
+            margin: 0 auto
+        }
+
+        .s-label {
+            font-size: 11px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 10px
+        }
+
+        .s-title {
+            font-family: 'Georgia', serif;
+            font-size: clamp(28px, 3.8vw, 50px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--navy);
+            margin-bottom: 14px
+        }
+
+        .s-desc {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: var(--muted);
+            max-width: 580px
+        }
+
+        .s-header {
+            margin-bottom: 52px
+        }
+
+        .dark .s-title {
+            color: white
+        }
+
+        .dark .s-desc {
+            color: rgba(255, 255, 255, .5)
+        }
+
+        .dark .s-label {
+            color: var(--teal2)
+        }
+
+        /* ── IM HERO ── */
+        .im-band {
+            background: linear-gradient(135deg, var(--navy) 0%, #0e2040 100%);
+            padding: 80px 4%
+        }
+
+        .im-band-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 72px;
+            align-items: center
+        }
+
+        .im-spec-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(192, 57, 43, .15);
+            border: 1px solid rgba(192, 57, 43, .35);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #f08070;
+            margin-bottom: 22px;
+            width: fit-content
+        }
+
+        .im-title {
+            font-family: 'Georgia', serif;
+            font-size: clamp(32px, 4vw, 54px);
+            font-weight: 400;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 14px
+        }
+
+        .im-title strong {
+            color: var(--red2);
+            font-weight: 400
+        }
+
+        .im-desc {
+            font-size: 14px;
+            line-height: 1.85;
+            color: rgba(255, 255, 255, .55);
+            margin-bottom: 28px;
+            max-width: 480px
+        }
+
+        .im-feats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 34px
+        }
+
+        .im-feat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, .72)
+        }
+
+        .im-feat::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: var(--teal);
+            border-radius: 50%;
+            flex-shrink: 0
+        }
+
+        .im-kpis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .im-kpi {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(30, 127, 168, .18);
+            border-radius: 10px;
+            padding: 18px;
+            transition: border-color .2s, background .2s
+        }
+
+        .im-kpi:hover {
+            border-color: rgba(30, 127, 168, .45);
+            background: rgba(30, 127, 168, .07)
+        }
+
+        .im-kpi-v {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            color: var(--teal2);
+            margin-bottom: 4px
+        }
+
+        .im-kpi-l {
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, .38)
+        }
+
+        /* ── MACHINE SERIES TABS ── */
+        .tab-bar {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0
+        }
+
+        .tab {
+            padding: 10px 20px;
+            font-size: 13px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-radius: 6px 6px 0 0;
+            color: var(--muted);
+            font-family: inherit;
+            transition: all .2s;
+            position: relative;
+            bottom: -2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab:hover {
+            color: var(--teal)
+        }
+
+        .tab.active {
+            color: var(--teal);
+            border-bottom-color: var(--teal);
+            background: var(--teal3);
+            font-weight: 500
+        }
+
+        .tab-panel {
+            display: none
+        }
+
+        .tab-panel.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: start
+        }
+
+        .panel-info h3 {
+            font-family: 'Georgia', serif;
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 6px
+        }
+
+        .panel-sub {
+            font-size: 12px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 14px
+        }
+
+        .panel-desc {
+            font-size: 14px;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 22px
+        }
+
+        .panel-feats {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            margin-bottom: 26px
+        }
+
+        .panel-feats li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 13.5px;
+            color: #4a5568;
+            line-height: 1.5
+        }
+
+        .panel-feats li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .panel-machine-img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background: #eef1f5;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            display: block;
+            margin-bottom: 18px;
+            padding: 10px
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .spec-box {
+            background: var(--off);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px
+        }
+
+        .spec-v {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: var(--teal);
+            margin-bottom: 4px
+        }
+
+        .spec-k {
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .06em
+        }
+
+        /* ── PRODUCT GRID ── */
+        .cat-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 36px
+        }
+
+        .cat-btn {
+            padding: 8px 18px;
+            font-size: 12.5px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--muted);
+            font-family: inherit;
+            transition: all .2s;
+        }
+
+        .cat-btn:hover {
+            border-color: var(--teal);
+            color: var(--teal)
+        }
+
+        .cat-btn.active {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal)
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px
+        }
+
+        .prod-img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background: #f0f4f8;
+            border-bottom: 1px solid var(--border);
+            display: block;
+            padding: 12px
+        }
+
+        .prod-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all .22s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .prod-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(10, 22, 40, .12);
+            border-color: var(--teal)
+        }
+
+        .prod-card-top {
+            padding: 22px 20px 16px;
+            flex: 1
+        }
+
+        .prod-tag {
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .tag-teal {
+            background: var(--teal3);
+            color: var(--teal)
+        }
+
+        .tag-red {
+            background: var(--red3);
+            color: var(--red)
+        }
+
+        .tag-gold {
+            background: var(--gold3);
+            color: var(--gold)
+        }
+
+        .tag-navy {
+            background: var(--light);
+            color: var(--navy3)
+        }
+
+        .prod-name {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+            line-height: 1.35
+        }
+
+        .prod-force {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color: var(--teal);
+            margin-bottom: 8px
+        }
+
+        .prod-desc {
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: var(--muted)
+        }
+
+        .prod-card-footer {
+            padding: 12px 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .prod-enquire {
+            font-size: 12px;
+            color: var(--teal);
+            font-weight: 500;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            transition: color .2s
+        }
+
+        .prod-enquire:hover {
+            color: var(--red)
+        }
+
+        .prod-yizumi-link {
+            font-size: 11px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+        .prod-yizumi-link:hover {
+            color: var(--teal)
+        }
+
+        /* ── APPLICATIONS ── */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 52px
+        }
+
+        .app-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .22s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--teal);
+            transform: scaleX(0);
+            transition: transform .3s
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--teal)
+        }
+
+        .app-card:hover::after {
+            transform: scaleX(1)
+        }
+
+        .app-icon {
+            font-size: 32px;
+            margin-bottom: 12px
+        }
+
+        .app-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px
+        }
+
+        .app-desc {
+            font-size: 12.5px;
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        /* ── OTHER MACHINES ── */
+        .other-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 52px
+        }
+
+        .other-card {
+            background: white;
+            padding: 30px 26px;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background .22s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .other-card:hover {
+            background: #f0f8fc
+        }
+
+        .other-card.featured {
+            background: var(--teal3)
+        }
+
+        .other-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--red);
+            transform: scaleX(0);
+            transition: transform .3s;
+            transform-origin: left
+        }
+
+        .other-card:hover::before,
+        .other-card.featured::before {
+            transform: scaleX(1)
+        }
+
+        .other-card.featured::before {
+            background: var(--teal)
+        }
+
+        .feat-lbl {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            font-size: 9px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px
+        }
+
+        .other-icon {
+            font-size: 24px;
+            margin-bottom: 12px
+        }
+
+        .other-name {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px
+        }
+
+        .other-desc {
+            font-size: 13px;
+            line-height: 1.65;
+            color: var(--muted);
+            margin-bottom: 12px
+        }
+
+        .other-cta {
+            font-size: 12px;
+            color: var(--teal);
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit
+        }
+
+        .other-card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            background: #f0f4f8;
+            border-radius: 6px;
+            display: block;
+            margin-bottom: 12px;
+            padding: 8px
+        }
+
+        /* ── AUXILIARIES ── */
+        .aux-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 16px;
+            margin-top: 48px
+        }
+
+        .aux-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .22s;
+        }
+
+        .aux-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--teal)
+        }
+
+        .aux-icon {
+            font-size: 28px;
+            margin-bottom: 10px
+        }
+
+        .aux-name {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 6px
+        }
+
+        .aux-desc {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        /* ── WHY ── */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 52px
+        }
+
+        .why-card {
+            border: 1px solid rgba(30, 127, 168, .18);
+            border-radius: 12px;
+            padding: 30px 24px;
+            transition: border-color .2s
+        }
+
+        .why-card:hover {
+            border-color: rgba(30, 127, 168, .45)
+        }
+
+        .why-num {
+            font-family: 'Georgia', serif;
+            font-size: 52px;
+            font-weight: 400;
+            color: rgba(30, 127, 168, .15);
+            line-height: 1;
+            margin-bottom: 14px
+        }
+
+        .why-t {
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px
+        }
+
+        .why-d {
+            font-size: 13px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, .42)
+        }
+
+        /* ── YIZUMI ABOUT ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px
+        }
+
+        .about-stat {
+            background: var(--teal3);
+            border: 1px solid rgba(30, 127, 168, .15);
+            border-radius: 10px;
+            padding: 18px
+        }
+
+        .about-stat-n {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            color: var(--teal);
+            margin-bottom: 4px
+        }
+
+        .about-stat-l {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .about-right {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 36px;
+            color: white
+        }
+
+        .about-right h3 {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 16px
+        }
+
+        .about-points {
+            display: flex;
+            flex-direction: column;
+            gap: 14px
+        }
+
+        .about-pt {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, .65);
+            line-height: 1.6
+        }
+
+        .about-pt::before {
+            content: '→';
+            color: var(--teal2);
+            flex-shrink: 0;
+            margin-top: 1px
+        }
+
+        /* ── NEWS ── */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 48px
+        }
+
+        .news-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all .22s;
+            cursor: pointer
+        }
+
+        .news-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow)
+        }
+
+        .news-thumb {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            background: linear-gradient(135deg, var(--teal3), var(--light))
+        }
+
+        .news-body {
+            padding: 20px
+        }
+
+        .news-date {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 8px;
+            letter-spacing: .06em
+        }
+
+        .news-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.45;
+            margin-bottom: 8px
+        }
+
+        .news-excerpt {
+            font-size: 12.5px;
+            color: var(--muted);
+            line-height: 1.65
+        }
+
+        /* ── CONTACT ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 72px;
+            align-items: start
+        }
+
+        .c-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 24px
+        }
+
+        .c-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--teal3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px
+        }
+
+        .c-lbl {
+            font-size: 10px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 3px
+        }
+
+        .c-val {
+            font-size: 14px;
+            color: var(--navy);
+            line-height: 1.65
+        }
+
+        .c-val a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .c-val a:hover {
+            color: var(--teal)
+        }
+
+        .contact-form-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 36px
+        }
+
+        .form-title {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 22px
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .fgroup {
+            margin-bottom: 14px
+        }
+
+        .flbl {
+            display: block;
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 6px
+        }
+
+        .finput {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 7px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--navy);
+            outline: none;
+            transition: border-color .2s;
+            background: var(--off)
+        }
+
+        .finput:focus {
+            border-color: var(--teal);
+            background: white
+        }
+
+        textarea.finput {
+            min-height: 90px;
+            resize: vertical
+        }
+
+        .fsubmit {
+            width: 100%;
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 13px;
+            font-family: inherit;
+            font-size: 13px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 7px;
+            margin-top: 6px;
+            transition: background .2s
+        }
+
+        .fsubmit:hover {
+            background: var(--teal)
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 32px 20px
+        }
+
+        .form-success-icon {
+            font-size: 48px;
+            margin-bottom: 14px
+        }
+
+        .form-success h4 {
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 8px
+        }
+
+        .form-success p {
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        /* ── MODAL ── */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, .65);
+            z-index: 600;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .modal-bg.open {
+            display: flex
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 540px;
+            width: 100%;
+            position: relative;
+            animation: mIn .22s ease;
+            max-height: 90vh;
+            overflow-y: auto
+        }
+
+        @keyframes mIn {
+            from {
+                opacity: 0;
+                transform: scale(.96) translateY(10px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .modal-x {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--muted);
+            line-height: 1
+        }
+
+        .modal-icon {
+            font-size: 38px;
+            margin-bottom: 10px
+        }
+
+        .modal-title {
+            font-family: 'Georgia', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 4px
+        }
+
+        .modal-sub {
+            font-size: 11px;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 14px
+        }
+
+        .modal-desc {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 20px
+        }
+
+        .modal-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 22px
+        }
+
+        .mspec {
+            background: var(--off);
+            border-radius: 8px;
+            padding: 12px
+        }
+
+        .mspec-v {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy)
+        }
+
+        .mspec-k {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px
+        }
+
+        .modal-enq {
+            background: var(--teal);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 13px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: background .2s
+        }
+
+        .modal-enq:hover {
+            background: var(--teal2)
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--navy2);
+            padding: 50px 4% 30px;
+            border-top: 1px solid rgba(30, 127, 168, .18)
+        }
+
+        .footer-top {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px
+        }
+
+        .footer-brand-name {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: white;
+            margin-bottom: 8px
+        }
+
+        .footer-brand-name span {
+            color: var(--teal2)
+        }
+
+        .footer-tagline {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, .38);
+            line-height: 1.7;
+            margin-bottom: 16px
+        }
+
+        .footer-contact-sm {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, .5);
+            line-height: 1.9
+        }
+
+        .footer-contact-sm a {
+            color: var(--teal2);
+            text-decoration: none
+        }
+
+        .footer-col-title {
+            font-size: 10px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--teal2);
+            margin-bottom: 14px
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .footer-links a {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            transition: color .2s
+        }
+
+        .footer-links a:hover {
+            color: var(--teal2)
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 20px
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .28)
+        }
+
+        .footer-ext a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .35);
+            text-decoration: none;
+            margin-left: 16px
+        }
+
+        .footer-ext a:hover {
+            color: var(--teal2)
+        }
+
+        /* ── RESPONSIVE ── */
+
+        /* ── Tablet ── */
+        @media(max-width:1024px) {
+
+            .tab-panel.active,
+            .about-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .tab-panel.active .spec-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .im-band-inner {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        /* ── Phone Landscape / Small Tablet ── */
+        @media(max-width:820px) {
+
+            .nav-links {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            .section {
+                padding: 60px 5%
+            }
+
+            .hero-inner {
+                flex-direction: column;
+                gap: 40px;
+                padding: 60px 5% 50px
+            }
+
+            .hero-right {
+                width: 100%
+            }
+
+            .hero-card {
+                max-width: 100%
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(4, 1fr)
+            }
+
+            .im-band-inner {
+                grid-template-columns: 1fr;
+                gap: 36px
+            }
+
+            .im-kpis {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .tab-bar {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                flex-wrap: nowrap;
+                padding-bottom: 0;
+                gap: 4px
+            }
+
+            .tab {
+                white-space: nowrap;
+                flex-shrink: 0
+            }
+
+            .tab-panel.active {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            .panel-machine-img {
+                height: 200px
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))
+            }
+
+            .other-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .app-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+            }
+
+            .aux-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 36px
+            }
+
+            .form-row {
+                grid-template-columns: 1fr
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* ── Phone Portrait ── */
+        @media(max-width:560px) {
+
+            .section {
+                padding: 50px 5%
+            }
+
+            .s-header {
+                margin-bottom: 36px
+            }
+
+            .hero-inner {
+                padding: 50px 5% 40px;
+                gap: 32px
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px
+            }
+
+            .btn {
+                text-align: center
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .hero-card {
+                padding: 20px
+            }
+
+            .im-kpis {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .im-spec-badge {
+                font-size: 10px
+            }
+
+            .tab-panel.active {
+                gap: 24px
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .panel-machine-img {
+                height: 170px
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr
+            }
+
+            .prod-card-top {
+                padding: 16px 14px 12px
+            }
+
+            .other-grid {
+                grid-template-columns: 1fr
+            }
+
+            .other-card {
+                padding: 22px 18px
+            }
+
+            .other-card-img {
+                height: 130px
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .aux-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px
+            }
+
+            .footer-ext {
+                display: flex;
+                gap: 16px
+            }
+
+            .footer-ext a {
+                margin-left: 0
+            }
+
+            .im-band {
+                padding: 60px 5%
+            }
+        }
+
+        /* ── Ultra-small (≤ 400px) ── */
+        @media(max-width:400px) {
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr
+            }
+
+            .aux-grid {
+                grid-template-columns: 1fr
+            }
+
+            .im-kpis {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════ NAV ══════════════════════════════════════ -->
+    <nav>
+        <a href="#home" class="nav-logo">
+            <svg width="148" height="44" viewBox="0 0 148 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="18" stroke="#2196a8" stroke-width="2" fill="none" />
+                <path
+                    d="M25 18.5C25 15.5 22.5 13.5 19.5 13.5C16.5 13.5 14.5 15.2 14.5 17.8C14.5 20.2 16.5 21.3 18.5 22C20.5 22.7 23 24 23 26.8C23 29.5 20.8 30.8 18 30.8C15.2 30.8 13 29.2 13 26.8"
+                    stroke="#d9534f" stroke-width="2.4" stroke-linecap="round" fill="none" />
+                <line x1="20" y1="14" x2="32" y2="14" stroke="#2196a8" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="26" y1="14" x2="26" y2="30" stroke="#2196a8" stroke-width="2.5" stroke-linecap="round" />
+                <text x="46" y="20" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#ffffff"
+                    letter-spacing=".5">STRAIGHT</text>
+                <text x="46" y="34" font-family="Arial,sans-serif" font-weight="400" font-size="11" fill="#2ea8d8"
+                    letter-spacing=".3">Technologies</text>
+            </svg>
+        </a>
+
+        <ul class="nav-links">
+            <li>
+                <a href="javascript:void(0)" onclick="scrollTo_('injection')">Injection Molding ▾</a>
+                <div class="dropdown multi">
+                    <div class="dd-col">
+                        <div class="dd-col-title">Toggle-Clamping Hydraulic</div>
+                        <a href="javascript:void(0)" onclick="filterProducts('hydraulic',null)">A6 Series — Next-Gen
+                            Intelligent</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('hydraulic',null)">A5-EU Series — High-end
+                            Servo</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('hydraulic',null)">A5-N Series — High-end
+                            Servo</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('hydraulic',null)">SKIII Series — General
+                            Purpose</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('hydraulic',null)">LS Series —
+                            Deep-cavity</a>
+                        <div class="dd-col-title" style="margin-top:12px">High-Speed</div>
+                        <a href="javascript:void(0)" onclick="filterProducts('highspeed',null)">P Series —
+                            High-speed</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('highspeed',null)">PS5 Series — 550mm/s</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('highspeed',null)">P-E Series — Servo
+                            Electric</a>
+                    </div>
+                    <div class="dd-col">
+                        <div class="dd-col-title">Electric</div>
+                        <a href="javascript:void(0)" onclick="filterProducts('electric',null)">FF Series — Full
+                            Electric</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('electric',null)">FF-N Series — Full
+                            Electric</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('electric',null)">FF-M Series — Medical</a>
+                        <div class="dd-col-title" style="margin-top:12px">Two-Platen</div>
+                        <a href="javascript:void(0)" onclick="filterProducts('twoplaten',null)">D1 Series — 5500–40000
+                            kN</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('twoplaten',null)">D1-N Series — US
+                            Tons</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('twoplaten',null)">DP Series —
+                            Multi-function</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('twoplaten',null)">D1M Series —
+                            Multi-component</a>
+                    </div>
+                    <div class="dd-col">
+                        <div class="dd-col-title">Multi-Component</div>
+                        <a href="javascript:void(0)" onclick="filterProducts('multi',null)">CG-P Series — High-end</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('multi',null)">CE-P Series — Electric</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('multi',null)">C-NTW Series</a>
+                        <div class="dd-col-title" style="margin-top:12px">Special Usage</div>
+                        <a href="javascript:void(0)" onclick="filterProducts('special',null)">SPET — PET Preforms</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('special',null)">LSR — Liquid Silicone</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('special',null)">UPVC &amp; PPR — Pipe
+                            Fitting</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('special',null)">VM Series — Vertical</a>
+                        <a href="javascript:void(0)" onclick="filterProducts('special',null)">SJII — Thin-wall</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">All Machines ▾</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">💨 Blow Molding</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">🔥 Thermoforming</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">🔧 Extruder / Pipe</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">♻️ Plastic Recycling</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">📦 Packaging</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')">🖨️ Printing</a>
+                </div>
+            </li>
+            <li><a href="javascript:void(0)" onclick="scrollTo_('auxiliaries')">Auxiliaries</a></li>
+            <li>
+                <a href="javascript:void(0)" onclick="scrollTo_('about')">About ▾</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" onclick="scrollTo_('about')">About Straight Technologies</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('about')">About YIZUMI</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('why')">Why Choose Us</a>
+                    <a href="https://www.yizumi.com/en/about/company" target="_blank">YIZUMI Global ↗</a>
+                    <a href="https://www.yizumi.com/en/about/green" target="_blank">YIZUMI Green ↗</a>
+                </div>
+            </li>
+            <li><a href="javascript:void(0)" onclick="scrollTo_('news')">News</a></li>
+            <li><a href="javascript:void(0)" onclick="scrollTo_('contact')" class="nav-cta">Get a Quote</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMobile()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mob-section-title">Injection Molding Series</div>
+        <a href="javascript:void(0)" onclick="filterProducts('hydraulic',null);closeMobile()">Toggle-Clamping
+            Hydraulic</a>
+        <a href="javascript:void(0)" onclick="filterProducts('electric',null);closeMobile()">Electric Machines (FF
+            Series)</a>
+        <a href="javascript:void(0)" onclick="filterProducts('twoplaten',null);closeMobile()">Two-Platen Machines</a>
+        <a href="javascript:void(0)" onclick="filterProducts('multi',null);closeMobile()">Multi-Component</a>
+        <a href="javascript:void(0)" onclick="filterProducts('highspeed',null);closeMobile()">High-Speed</a>
+        <a href="javascript:void(0)" onclick="filterProducts('special',null);closeMobile()">Special Usage (LSR / PET /
+            UPVC)</a>
+        <div class="mob-section-title">Other Products</div>
+        <a href="javascript:void(0)" onclick="scrollTo_('other-machines');closeMobile()">All Plastic Machinery</a>
+        <a href="javascript:void(0)" onclick="scrollTo_('auxiliaries');closeMobile()">Auxiliaries</a>
+        <div class="mob-section-title">Company</div>
+        <a href="javascript:void(0)" onclick="scrollTo_('about');closeMobile()">About Us</a>
+        <a href="javascript:void(0)" onclick="scrollTo_('why');closeMobile()">Why Choose Us</a>
+        <a href="javascript:void(0)" onclick="scrollTo_('news');closeMobile()">News</a>
+        <a href="javascript:void(0)" onclick="scrollTo_('contact');closeMobile()">Contact / Get a Quote</a>
+    </div>
+
+    <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-glow2"></div>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-badge">Official Sales &amp; Service Partner — Bangladesh</div>
+                <h1 class="hero-title serif">Complete Plastic<br>Machinery <em>Solutions</em><br>for Industry</h1>
+                <p class="hero-sub">Specializing in Injection Molding</p>
+                <p class="hero-desc">Straight Technologies is Bangladesh's sole authorized agent for YIZUMI — a global
+                    leader with 140,000+ machines operating worldwide. We supply, install, and service the full YIZUMI
+                    range with local expertise.</p>
+                <div class="hero-btns">
+                    <a href="javascript:void(0)" onclick="scrollTo_('injection')" class="btn btn-teal">Injection
+                        Molding</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('other-machines')" class="btn btn-outline">All
+                        Products</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('contact')" class="btn btn-red">Get a Quote</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-card">
+                    <div class="partner-lbl">Authorized Sole Agent</div>
+                    <div class="yizumi-box">
+                        <div class="yizumi-big">YIZUMI</div>
+                        <div class="yizumi-sm">www.yizumi.com/en</div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hstat">
+                            <div class="hstat-n">140K+</div>
+                            <div class="hstat-l">Machines Worldwide</div>
+                        </div>
+                        <div class="hstat">
+                            <div class="hstat-n">400+</div>
+                            <div class="hstat-l">Tech Patents</div>
+                        </div>
+                        <div class="hstat">
+                            <div class="hstat-n">25+</div>
+                            <div class="hstat-l">IMM Series</div>
+                        </div>
+                        <div class="hstat">
+                            <div class="hstat-n">Sole</div>
+                            <div class="hstat-l">BD Agent</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <span class="ticker-item">★ Injection Molding Specialist</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">A6 Series — Next-Gen Intelligent IMM</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">FF Series — Full Electric</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">D1 Two-Platen — up to 40,000 kN</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">PS5 High-Speed — 550mm/s</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">LSR Liquid Silicone</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Multi-Component 2K/3K</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Blow Molding</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Plastic Recycling</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Rubber Injection</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Die Casting</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Robotic Automation</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">★ Injection Molding Specialist</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">A6 Series — Next-Gen Intelligent IMM</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">FF Series — Full Electric</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">D1 Two-Platen — up to 40,000 kN</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">PS5 High-Speed — 550mm/s</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">LSR Liquid Silicone</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Multi-Component 2K/3K</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Blow Molding</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Plastic Recycling</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Rubber Injection</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Die Casting</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">Robotic Automation</span><span class="ticker-sep">◆</span>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ INJECTION MOLDING HERO BAND ══════════════════════════════════════ -->
+    <div class="im-band" id="injection">
+        <div class="im-band-inner">
+            <div>
+                <div class="im-spec-badge">★ Core Specialization</div>
+                <h2 class="im-title serif">YIZUMI<br><strong>Injection Molding</strong><br>Machines</h2>
+                <p class="im-desc">As Bangladesh's sole YIZUMI agent, we specialize in the full range of YIZUMI
+                    injection molding machines — 25+ series covering toggle-clamping hydraulic, all-electric,
+                    two-platen, multi-component, high-speed, and special-usage applications. From 65T to 44,000 kN
+                    clamping force.</p>
+                <div class="im-feats">
+                    <div class="im-feat">25+ injection molding machine series from YIZUMI</div>
+                    <div class="im-feat">Clamping force: 65 US Tons to 44,000 kN (4,400T)</div>
+                    <div class="im-feat">All-electric, servo-hydraulic &amp; hybrid drive options</div>
+                    <div class="im-feat">Medical, automotive, packaging, electronics, construction</div>
+                    <div class="im-feat">Full after-sales: installation, training, spare parts, maintenance</div>
+                    <div class="im-feat">YIZUMI 4.0 — Smart Manufacturing &amp; MES integration</div>
+                </div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap">
+                    <a href="javascript:void(0)" onclick="scrollTo_('im-series')" class="btn btn-teal">Browse All
+                        Series</a>
+                    <a href="javascript:void(0)" onclick="scrollTo_('im-applications')" class="btn btn-outline"
+                        style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2)">Applications</a>
+                </div>
+            </div>
+            <div class="im-kpis">
+                <div class="im-kpi">
+                    <div class="im-kpi-v">65T–4400T</div>
+                    <div class="im-kpi-l">Clamping Force Range</div>
+                </div>
+                <div class="im-kpi">
+                    <div class="im-kpi-v">±0.1%</div>
+                    <div class="im-kpi-l">Shot Weight Repeatability</div>
+                </div>
+                <div class="im-kpi">
+                    <div class="im-kpi-v">550mm/s</div>
+                    <div class="im-kpi-l">Max Injection Speed (PS5)</div>
+                </div>
+                <div class="im-kpi">
+                    <div class="im-kpi-v">70%</div>
+                    <div class="im-kpi-l">Energy Saving (vs. Hydraulic)</div>
+                </div>
+                <div class="im-kpi">
+                    <div class="im-kpi-v">25+</div>
+                    <div class="im-kpi-l">Machine Series</div>
+                </div>
+                <div class="im-kpi">
+                    <div class="im-kpi-v">400+</div>
+                    <div class="im-kpi-l">YIZUMI Patents</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ IM SERIES DETAIL ══════════════════════════════════════ -->
+    <section class="section" style="background:var(--off)" id="im-series">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Product Series</div>
+                <h2 class="s-title">YIZUMI Injection Molding<br>Machine Series</h2>
+                <p class="s-desc">Every YIZUMI series is engineered for specific production demands — from high-speed
+                    thin-wall packaging to heavy-duty large-part automotive manufacturing.</p>
+            </div>
+
+            <div class="tab-bar" id="seriesTabs">
+                <button class="tab active" onclick="switchTab('hydraulic',this)">Toggle Hydraulic</button>
+                <button class="tab" onclick="switchTab('electric',this)">All-Electric</button>
+                <button class="tab" onclick="switchTab('twoplaten',this)">Two-Platen</button>
+                <button class="tab" onclick="switchTab('multi',this)">Multi-Component</button>
+                <button class="tab" onclick="switchTab('highspeed',this)">High-Speed</button>
+                <button class="tab" onclick="switchTab('special',this)">Special Usage</button>
+                <button class="tab" onclick="switchTab('vertical',this)">Vertical</button>
+            </div>
+
+            <!-- HYDRAULIC -->
+            <div id="tab-hydraulic" class="tab-panel active">
+                <div class="panel-info">
+                    <h3>Toggle-Clamping Hydraulic</h3>
+                    <div class="panel-sub">General Purpose Servo Hydraulic IMMs</div>
+                    <p class="panel-desc">YIZUMI's flagship hydraulic series combines servo drive efficiency with robust
+                        toggle clamping — the all-round workhorse for general plastic manufacturing. The next-gen A6
+                        Series integrates YIZUMI's "IPD 2.0" intelligent process technology for smart, precise,
+                        efficient production.</p>
+                    <ul class="panel-feats">
+                        <li><strong>A6 Series:</strong> Next-Gen Intelligent IMM — 900–10,000 kN, IPD 2.0 smart process,
+                            Industry 4.0 ready</li>
+                        <li><strong>A5-EU Series:</strong> High-end Servo — 300–7,000 kN, precision &amp; stability,
+                            European-market grade</li>
+                        <li><strong>A5-N Series:</strong> High-end Servo — 65–1,125 US Tons, optimized injection unit,
+                            uniform-stress molding</li>
+                        <li><strong>SKIII Series:</strong> General Purpose — reliable, cost-effective, wide material
+                            compatibility</li>
+                        <li><strong>LS Series:</strong> Deep-cavity Product — specialized for buckets, crates, deep
+                            containers</li>
+                        <li><strong>U3 Series:</strong> Bakelite Special — 900–4,800 kN, integrated feeding, thermoset
+                            compounds</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('Toggle-Clamping Hydraulic Injection Molding Machine (A6/A5-EU/A5-N/SKIII)')">Enquire
+                        This Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2024-12-19/44f29206-3552-470c-b764-db0d05f5d71c1734596718526.png"
+                        alt="A6 Series Next-Gen Intelligent Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">65T–7,000kN</div>
+                            <div class="spec-k">Clamping Range</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">IPD 2.0</div>
+                            <div class="spec-k">A6 Smart Process</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">40–60%</div>
+                            <div class="spec-k">Energy Savings</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Toggle</div>
+                            <div class="spec-k">Clamping Type</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--teal3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">General purpose plastics ·
+                            Automotive components · Consumer goods · Packaging · Industrial parts · Household items
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELECTRIC -->
+            <div id="tab-electric" class="tab-panel">
+                <div class="panel-info">
+                    <h3>All-Electric Series</h3>
+                    <div class="panel-sub">FF / FF-N / FF-M — Zero Hydraulic</div>
+                    <p class="panel-desc">YIZUMI's FF Series all-electric injection molding machines deliver the highest
+                        precision, cleanest operation, and maximum energy savings. Ideal for medical, electronics, and
+                        precision consumer products. The FF-M medical variant is designed specifically for cleanroom
+                        pharmaceutical manufacturing.</p>
+                    <ul class="panel-feats">
+                        <li><strong>FF Series:</strong> 900–13,800 kN — full electric, seamless automation, superior
+                            precision</li>
+                        <li><strong>FF-N Series:</strong> 100–1,510 US Tons — enhanced quality consistency and
+                            efficiency</li>
+                        <li><strong>FF-M Medical:</strong> 1,600–3,800 kN — medical-grade cleanroom configuration</li>
+                        <li>Up to 70% energy savings vs. standard hydraulic</li>
+                        <li>Zero hydraulic oil — clean, contamination-free operation</li>
+                        <li>Shot weight repeatability ±0.1% for ultra-precision parts</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('All-Electric Injection Molding Machine (FF / FF-N / FF-M Medical Series)')">Enquire
+                        This Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2022-12-20/6d53a950-95de-442e-b743-06d227391aab1671501537787.png"
+                        alt="FF Series Electric Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">900–13,800kN</div>
+                            <div class="spec-k">FF Series Range</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">±0.1%</div>
+                            <div class="spec-k">Shot Repeatability</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">70%</div>
+                            <div class="spec-k">Energy Savings</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Cleanroom</div>
+                            <div class="spec-k">Medical Grade (FF-M)</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--teal3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">Medical devices &amp; pharma · 3C
+                            Electronics · Precision components · Optical parts · High-value consumer goods</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TWO-PLATEN -->
+            <div id="tab-twoplaten" class="tab-panel">
+                <div class="panel-info">
+                    <h3>Two-Platen Series</h3>
+                    <div class="panel-sub">D1 / D1-N / DP / D1M — Heavy Industry</div>
+                    <p class="panel-desc">YIZUMI two-platen machines deliver massive clamping force in a compact
+                        footprint — engineered for large automotive, industrial, and packaging applications. The D1 and
+                        D1-N series reach up to 44,000 kN, incorporating German technology and YIZUMI's proprietary
+                        large-tonnage expertise.</p>
+                    <ul class="panel-feats">
+                        <li><strong>D1 Series:</strong> 5,500–40,000 kN — German technology, large-tonnage benchmark
+                        </li>
+                        <li><strong>D1-N Series:</strong> 5,500–44,000 kN — North American market configuration</li>
+                        <li><strong>DP Series:</strong> 550–4,000 US Tons — ICM, FoamPro, LGF, multi-material micro
+                            injection</li>
+                        <li><strong>D1M Series:</strong> 5,000–24,000 kN — two-platen multi-component, advanced
+                            technology</li>
+                        <li>Compact footprint vs. equivalent toggle machine</li>
+                        <li>High mold stroke for deep-draw large parts</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('Two-Platen Injection Molding Machine (D1 / D1-N / DP Series)')">Enquire
+                        This Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2022-12-14/574417df-a16a-41d6-97b3-275e8da7bd6a1670947766042.png"
+                        alt="D1 Series Two-Platen Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">5500–44000kN</div>
+                            <div class="spec-k">Clamping Force</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Compact</div>
+                            <div class="spec-k">Footprint Design</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">German</div>
+                            <div class="spec-k">Core Technology</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">ICM/LGF</div>
+                            <div class="spec-k">DP Special Processes</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--teal3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">Large auto bumpers &amp;
+                            dashboards · Industrial containers · Large crates &amp; pallets · Pipe fittings · Structural
+                            parts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MULTI-COMPONENT -->
+            <div id="tab-multi" class="tab-panel">
+                <div class="panel-info">
+                    <h3>Multi-Component</h3>
+                    <div class="panel-sub">CG-P / CE-P / C-NTW / D1M — 2K/3K Molding</div>
+                    <p class="panel-desc">YIZUMI's multi-component injection molding machines enable bi-color,
+                        bi-material, overmolding, and co-injection in a single cycle — eliminating secondary assembly
+                        operations and dramatically reducing cost-per-part. The CG-P and CE-P series cover 1,600–8,000
+                        kN for demanding automotive and consumer applications.</p>
+                    <ul class="panel-feats">
+                        <li><strong>CG-P Series:</strong> 1,600–8,000 kN — high-end hydraulic multi-component</li>
+                        <li><strong>CE-P Series:</strong> 1,500–5,500 kN — electric multi-component, quiet &amp;
+                            energy-efficient</li>
+                        <li><strong>C-NTW Series:</strong> 1,600–4,800 kN — stable, customizable, vibrant multi-material
+                        </li>
+                        <li><strong>D1M Series:</strong> 5,000–24,000 kN — two-platen multi-component for large parts
+                        </li>
+                        <li>Rotary table / index plate / core-pull configurations</li>
+                        <li>Eliminates gluing, painting &amp; secondary assembly steps</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('Multi-Component Injection Molding Machine (CG-P / CE-P / C-NTW)')">Enquire
+                        This Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2023-12-04/8a82fe60-4f08-4f07-9a40-63558f2024b21701669737186.png"
+                        alt="CG-P Series Multi-Component Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">1600–8000kN</div>
+                            <div class="spec-k">CG-P Range</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">2K / 3K</div>
+                            <div class="spec-k">Components</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Rotary</div>
+                            <div class="spec-k">Platen Type</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">−50%</div>
+                            <div class="spec-k">Secondary Operations</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--teal3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">Soft-touch grips · Multi-color
+                            auto parts · 3C device housings · Toothbrushes · Bi-color packaging caps</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIGH-SPEED -->
+            <div id="tab-highspeed" class="tab-panel">
+                <div class="panel-info">
+                    <h3>High-Speed Series</h3>
+                    <div class="panel-sub">P / PS5 / P-E / P-M — Thin-Wall Packaging</div>
+                    <p class="panel-desc">YIZUMI high-speed injection molding machines are the top choice for thin-wall
+                        packaging, food containers, caps &amp; closures, and medical disposables. The PS5
+                        fifth-generation series delivers up to 550mm/s injection speed with clamping forces of
+                        2,800–5,600 kN.</p>
+                    <ul class="panel-feats">
+                        <li><strong>P Series:</strong> 2,500–5,500 kN — multi-cavity thin-wall packaging turnkey
+                            solutions</li>
+                        <li><strong>PS5 Series:</strong> 2,800–5,600 kN — 550mm/s max speed, high-rigidity platens</li>
+                        <li><strong>P-E Series:</strong> 200–350 US Tons — servo electric, 30–50% energy savings, 2–2.6s
+                            dry cycle</li>
+                        <li><strong>P-M Series:</strong> Cleanroom high-speed for medical disposables</li>
+                        <li>Optimized control system for consistent high-speed cycles</li>
+                        <li>Enhanced cylinder sealing for extended machine life</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('High-Speed Injection Molding Machine (P / PS5 / P-E Series)')">Enquire
+                        This Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2025-06-03/9c0e2e5a-8a0d-4c73-9971-b7f54b0ee7fd1748928876943.png"
+                        alt="PS5 Series High-Speed Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">550mm/s</div>
+                            <div class="spec-k">Max Injection Speed (PS5)</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">2800–5600kN</div>
+                            <div class="spec-k">PS5 Clamping Range</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">2–2.6s</div>
+                            <div class="spec-k">P-E Dry Cycle</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">50%</div>
+                            <div class="spec-k">P-E Energy Savings</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--teal3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">Food packaging containers · Caps
+                            &amp; closures · Medical disposables · Bottle preforms · Thin-wall buckets</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIAL -->
+            <div id="tab-special" class="tab-panel">
+                <div class="panel-info">
+                    <h3>Special Usage Series</h3>
+                    <div class="panel-sub">LSR / SPET / UPVC / SJII — Application-Specific</div>
+                    <p class="panel-desc">YIZUMI special-usage injection molding machines are purpose-built for
+                        demanding material and application requirements — from liquid silicone rubber (LSR) medical
+                        products to PET preform bottle production and UPVC/PPR pipe fitting manufacturing.</p>
+                    <ul class="panel-feats">
+                        <li><strong>LSR Series:</strong> Liquid Silicone / Rubber — cold runner, vacuum venting,
+                            medical-grade</li>
+                        <li><strong>SPET Series:</strong> PET Preforms — 1,600–10,000 kN, 5–10% faster plasticizing,
+                            10–30% energy saving</li>
+                        <li><strong>UPVC &amp; PPR Series:</strong> Pipe Fittings — UPVC 2,000–7,500 kN, PPR
+                            1,600–26,000 kN</li>
+                        <li><strong>SJII Series:</strong> High-end Thin-wall — 900–1,600 kN precision</li>
+                        <li><strong>U3 Series:</strong> Bakelite/BMC thermoset compounds — integrated feeding system
+                        </li>
+                        <li>Turnkey solutions with raw materials, molds, equipment &amp; process</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('Special-Usage Injection Molding Machine (LSR / SPET / UPVC / PPR)')">Enquire
+                        This Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2023-12-07/f039af18-5dc3-4ba5-a47e-2845e10a66821701928619393.png"
+                        alt="LSR Series Liquid Silicone Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">Cold Runner</div>
+                            <div class="spec-k">LSR System</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">26,000kN</div>
+                            <div class="spec-k">Max PPR Clamping</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">10–30%</div>
+                            <div class="spec-k">SPET Energy Saving</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Medical</div>
+                            <div class="spec-k">LSR Grade Available</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--red3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--red);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">Medical silicone parts · PET
+                            bottle preforms · UPVC/PPR fittings · Seals &amp; gaskets · Thermoset components</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERTICAL -->
+            <div id="tab-vertical" class="tab-panel">
+                <div class="panel-info">
+                    <h3>VM Series Vertical</h3>
+                    <div class="panel-sub">Vertical Plastic Injection Molding — Insert Molding</div>
+                    <p class="panel-desc">The VM Series vertical injection molding machine provides precise control and
+                        stability for insert molding applications. Its vertical injection axis makes it ideal for
+                        overmolding metal inserts, connectors, wire harnesses, and other embedded components directly
+                        into plastic parts.</p>
+                    <ul class="panel-feats">
+                        <li>Vertical injection axis — ideal for gravity-aided insert placement</li>
+                        <li>Direct clamping for high rigidity and precision</li>
+                        <li>600–3,000 kN clamping force</li>
+                        <li>Rotary table option for simultaneous load &amp; mold cycles</li>
+                        <li>Reliable operation for connectors, terminals, wire harnesses</li>
+                        <li>Compact footprint with easy operator access</li>
+                    </ul>
+                    <button class="btn btn-teal"
+                        onclick="enquireProduct('VM Series Vertical Injection Molding Machine')">Enquire VM
+                        Series</button>
+                </div>
+                <div>
+                    <img class="panel-machine-img"
+                        src="https://www.yizumi.com/uploads/2024-01-09/7c33b380-c088-4110-8f68-fcb50edcfa251704791567730.png"
+                        alt="VM Series Vertical Injection Molding Machine" loading="lazy">
+                    <div class="spec-grid">
+                        <div class="spec-box">
+                            <div class="spec-v">600–3000kN</div>
+                            <div class="spec-k">Clamping Force</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Vertical</div>
+                            <div class="spec-k">Injection Axis</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Rotary</div>
+                            <div class="spec-k">Table Option</div>
+                        </div>
+                        <div class="spec-box">
+                            <div class="spec-v">Insert</div>
+                            <div class="spec-k">Molding Optimized</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;background:var(--teal3);border-radius:10px;padding:18px">
+                        <div
+                            style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase">
+                            Recommended For</div>
+                        <div style="font-size:13px;color:var(--muted);line-height:1.7">Electrical connectors · Wire
+                            harnesses · Metal-insert overmolding · Terminals · Small precision parts with inserts</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ PRODUCT CATALOG ══════════════════════════════════════ -->
+    <section class="section" style="background:white" id="catalog">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Full Product Catalog</div>
+                <h2 class="s-title">Browse All YIZUMI<br>Injection Molding Machines</h2>
+                <p class="s-desc">All 25+ injection molding machine series available through Straight Technologies.
+                    Click any machine to enquire.</p>
+            </div>
+            <div class="cat-filters">
+                <button class="cat-btn active" onclick="filterProducts('all',this)">All Series</button>
+                <button class="cat-btn" onclick="filterProducts('hydraulic',this)">Toggle Hydraulic</button>
+                <button class="cat-btn" onclick="filterProducts('electric',this)">All-Electric</button>
+                <button class="cat-btn" onclick="filterProducts('twoplaten',this)">Two-Platen</button>
+                <button class="cat-btn" onclick="filterProducts('multi',this)">Multi-Component</button>
+                <button class="cat-btn" onclick="filterProducts('highspeed',this)">High-Speed</button>
+                <button class="cat-btn" onclick="filterProducts('special',this)">Special Usage</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ IM APPLICATIONS ══════════════════════════════════════ -->
+    <section class="section" style="background:var(--off)" id="im-applications">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Industries Served</div>
+                <h2 class="s-title">Injection Molding<br>Applications</h2>
+                <p class="s-desc">YIZUMI injection molding machines serve every major industry. Click an application to
+                    find the right machine series for your production needs.</p>
+            </div>
+            <div class="app-grid">
+                <div class="app-card"
+                    onclick="appEnquire('Medical & Pharma','FF-M Series medical injection molding machine for cleanroom production')">
+                    <div class="app-icon">🏥</div>
+                    <div class="app-name">Medical &amp; Pharma</div>
+                    <div class="app-desc">Syringes, vials, medical device housings, lab consumables — FF-M cleanroom
+                        machines with Class 7/8 compatibility</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('Auto Parts','High-tonnage two-platen or A5 series for automotive bumpers, dashboards and panels')">
+                    <div class="app-icon">🚗</div>
+                    <div class="app-name">Auto Parts</div>
+                    <div class="app-desc">Bumpers, dashboards, door panels, trim parts — D1 two-platen and A6
+                        intelligent series for precision automotive manufacturing</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('3C Electronics','FF Series electric injection molding for connectors and precision electronic components')">
+                    <div class="app-icon">🔌</div>
+                    <div class="app-name">3C Electronics</div>
+                    <div class="app-desc">Connectors, switches, device housings, precision components — FF electric
+                        series with ±0.1% shot repeatability</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('High-Speed Packaging','P Series or PS5 high-speed machines for thin-wall containers and caps')">
+                    <div class="app-icon">📦</div>
+                    <div class="app-name">High-Speed Packaging</div>
+                    <div class="app-desc">Thin-wall containers, caps, closures, food packaging — PS5 at 550mm/s with
+                        multi-cavity molds</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('PET Preforms','SPET Series specially designed for PET bottle preform production')">
+                    <div class="app-icon">🍶</div>
+                    <div class="app-name">PET Preforms</div>
+                    <div class="app-desc">Bottle preforms, cosmetics packaging — SPET Series with enhanced screw speed
+                        and 10–30% energy savings</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('Pipe Fittings (UPVC/PPR)','UPVC & PPR Series specialized injection molding for plumbing pipe fittings')">
+                    <div class="app-icon">🔩</div>
+                    <div class="app-name">Pipe Fittings</div>
+                    <div class="app-desc">UPVC &amp; PPR fittings, plumbing components — dedicated UPVC/PPR series from
+                        2,000–26,000 kN</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('Liquid Silicone (LSR)','LSR Series liquid silicone rubber injection molding for seals and medical silicone parts')">
+                    <div class="app-icon">🧪</div>
+                    <div class="app-name">Liquid Silicone (LSR)</div>
+                    <div class="app-desc">Seals, gaskets, medical silicone parts, baby products — LSR Series with cold
+                        runner and vacuum venting</div>
+                </div>
+                <div class="app-card"
+                    onclick="appEnquire('Consumer Goods','A5-N or UN Series servo hydraulic for household and consumer plastic products')">
+                    <div class="app-icon">🏠</div>
+                    <div class="app-name">Consumer Goods</div>
+                    <div class="app-desc">Household products, appliance parts, toys, storage — A5 series with broad
+                        material compatibility</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ OTHER MACHINES ══════════════════════════════════════ -->
+    <section class="section" style="background:white" id="other-machines">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Full Product Range</div>
+                <h2 class="s-title">All Plastic Processing<br>Machinery</h2>
+                <p class="s-desc">Beyond injection molding, Straight Technologies supplies the complete range of YIZUMI
+                    and associated plastic processing equipment for every manufacturing need.</p>
+            </div>
+            <div class="other-grid">
+                <div class="other-card featured" onclick="scrollTo_('injection')">
+                    <div class="feat-lbl">★ Specialization</div>
+                    <div class="other-icon">⚙️</div>
+                    <div class="other-name">Injection Molding Machines</div>
+                    <div class="other-desc">Our core expertise — 25+ YIZUMI series from 65T to 44,000 kN. Electric,
+                        hydraulic, two-platen, multi-component, high-speed and LSR configurations.</div>
+                    <button class="other-cta" onclick="event.stopPropagation();scrollTo_('injection')">View all 25+
+                        series →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Rubber Injection Molding Machine (YIZUMI YL Series)')">
+                    <div class="other-icon">🔴</div>
+                    <img class="other-card-img"
+                        src="https://www.yizumi.com/uploads/2025-02-07/eb54a71e-722a-4f7e-92f1-b6307c239f491738891274010.png"
+                        alt="YIZUMI YL3 European Series Rubber Injection Molding Machine" loading="lazy">
+                    <div class="other-name">Rubber Injection Molding</div>
+                    <div class="other-desc">YIZUMI YL Series — European &amp; Asian designs, Industry 4.0 compatible.
+                        Air springs, energy-sector components, LSR cable accessories, C-frame inserts.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Blow Molding Machine')">
+                    <div class="other-icon">💨</div>
+                    <div class="other-name">Blow Molding Machine</div>
+                    <div class="other-desc">Hollow plastic parts — bottles, jerricans, containers, industrial tanks.
+                        Extrusion and injection blow molding configurations available.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Thermoforming Machine')">
+                    <div class="other-icon">🔥</div>
+                    <div class="other-name">Thermoforming Machine</div>
+                    <div class="other-desc">High-speed sheet forming for packaging trays, blisters, disposable cups, and
+                        industrial profiles from thermoplastic sheets.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Extruder / Pipe Extrusion Machine')">
+                    <div class="other-icon">🔧</div>
+                    <div class="other-name">Extruder / Pipe Machine</div>
+                    <div class="other-desc">Continuous extrusion of pipes, profiles, sheets and films from HDPE, UPVC,
+                        PP, and other thermoplastic materials.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Plastic Recycling Machine / Line')">
+                    <div class="other-icon">♻️</div>
+                    <div class="other-name">Plastic Recycling Machine</div>
+                    <div class="other-desc">Complete recycling lines — shredding, washing, granulating post-industrial
+                        and post-consumer plastic waste back to reusable pellets.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Packaging Machine (Plastic)')">
+                    <div class="other-icon">📦</div>
+                    <div class="other-name">Packaging Machine</div>
+                    <div class="other-desc">Automated plastic packaging solutions for food, pharmaceuticals, FMCG.
+                        Wrapping, sealing, labelling and complete packaging lines.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Printing Machine (Plastic / Industrial)')">
+                    <div class="other-icon">🖨️</div>
+                    <div class="other-name">Printing Machine</div>
+                    <div class="other-desc">Industrial plastic printing for surface decoration, product branding,
+                        serialization and colour marking of molded components.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('Die Casting Machine (YIZUMI HII-S / LEAP Series)')">
+                    <div class="other-icon">🏗️</div>
+                    <img class="other-card-img"
+                        src="https://www.yizumi.com/uploads/2022-12-14/71015ea3-f53f-43c6-9176-88fc631e01a11670947886135.png"
+                        alt="YIZUMI LEAP Series Die Casting Machine" loading="lazy">
+                    <div class="other-name">Die Casting Machine</div>
+                    <div class="other-desc">YIZUMI HII-S &amp; LEAP series cold-chamber die casting — 180T to 9,000T
+                        locking force for aluminum, zinc and magnesium alloy parts.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+                <div class="other-card" onclick="enquireProduct('YIZUMI Robotic Automation / Smart Manufacturing')">
+                    <div class="other-icon">🤖</div>
+                    <div class="other-name">Robotic Automation</div>
+                    <div class="other-desc">YIZUMI robotic automation cells for injection molding — part extraction,
+                        insert loading, inspection, assembly and complete smart manufacturing islands.</div>
+                    <button class="other-cta">Enquire →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ AUXILIARIES ══════════════════════════════════════ -->
+    <section class="section" style="background:var(--off)" id="auxiliaries">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Supporting Equipment</div>
+                <h2 class="s-title">Auxiliary Systems</h2>
+                <p class="s-desc">Complete your production line with auxiliary equipment for material preparation,
+                    temperature control, automation and recycling. Click any item for details.</p>
+            </div>
+            <div class="aux-grid">
+                <div class="aux-card" onclick="openAux('hopper')">
+                    <div class="aux-icon">🌡️</div>
+                    <div class="aux-name">Hopper Dryer</div>
+                    <div class="aux-desc">Pre-drying plastic granules before molding — prevents splay marks, bubbles and
+                        degradation</div>
+                </div>
+                <div class="aux-card" onclick="openAux('loader')">
+                    <div class="aux-icon">🔄</div>
+                    <div class="aux-name">Auto Loader</div>
+                    <div class="aux-desc">Automated vacuum conveying of raw material to machine hopper — continuous,
+                        hands-free</div>
+                </div>
+                <div class="aux-card" onclick="openAux('chiller')">
+                    <div class="aux-icon">❄️</div>
+                    <div class="aux-name">Chiller</div>
+                    <div class="aux-desc">Precision mold &amp; process cooling — ±0.5°C accuracy, critical for cycle
+                        time and quality</div>
+                </div>
+                <div class="aux-card" onclick="openAux('mold')">
+                    <div class="aux-icon">🏭</div>
+                    <div class="aux-name">Mold / Tooling</div>
+                    <div class="aux-desc">Custom injection mold supply — single/multi-cavity, hot &amp; cold runner,
+                        with trial runs</div>
+                </div>
+                <div class="aux-card" onclick="openAux('robot')">
+                    <div class="aux-icon">🤖</div>
+                    <div class="aux-name">Robot / Take-out</div>
+                    <div class="aux-desc">Linear &amp; 6-axis robots for part removal, insert loading, stacking and
+                        downstream automation</div>
+                </div>
+                <div class="aux-card" onclick="openAux('crusher')">
+                    <div class="aux-icon">⚗️</div>
+                    <div class="aux-name">Crusher / Granulator</div>
+                    <div class="aux-desc">In-line scrap reduction — sprues, runners and rejects back to uniform regrind
+                        pellets</div>
+                </div>
+                <div class="aux-card" onclick="openAux('conveyor')">
+                    <div class="aux-icon">🔀</div>
+                    <div class="aux-name">Conveying System</div>
+                    <div class="aux-desc">Centralized pneumatic material transport from silos to multiple machines
+                        simultaneously</div>
+                </div>
+                <div class="aux-card" onclick="openAux('tempcontrol')">
+                    <div class="aux-icon">🌊</div>
+                    <div class="aux-name">Mold Temp Controller</div>
+                    <div class="aux-desc">Hot water / oil temperature controllers for precise mold heating in
+                        engineering plastics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ WHY ══════════════════════════════════════ -->
+    <section class="section dark" style="background:var(--navy)" id="why">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Why Choose Us</div>
+                <h2 class="s-title">Bangladesh's Trusted<br>Industrial Partner</h2>
+                <p class="s-desc">As the sole authorized YIZUMI representative in Bangladesh, we back every sale with
+                    genuine machines, factory-trained engineers, and complete local after-sales support.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-num">01</div>
+                    <div class="why-t">Injection Molding Specialists</div>
+                    <div class="why-d">Our deepest expertise is injection molding — all 25+ YIZUMI IMM series. We guide
+                        you from machine selection and mold compatibility to production optimization and ongoing
+                        service.</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">02</div>
+                    <div class="why-t">Sole YIZUMI Agent — Bangladesh</div>
+                    <div class="why-d">We are the exclusive authorized sales &amp; service partner for YIZUMI in
+                        Bangladesh. Genuine machines, genuine parts, factory-backed warranty — no grey market risk.
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">03</div>
+                    <div class="why-t">Full Technical Service</div>
+                    <div class="why-d">On-site installation, commissioning, operator training, preventive maintenance
+                        schedules, and rapid breakdown support. Factory-trained engineers based in Dhaka.</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">04</div>
+                    <div class="why-t">Turnkey Solutions</div>
+                    <div class="why-d">From site preparation, machine supply, mold sourcing, auxiliary equipment to
+                        production line integration — we deliver complete, ready-to-run manufacturing solutions.</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">05</div>
+                    <div class="why-t">YIZUMI 4.0 Smart Factory</div>
+                    <div class="why-d">Access to YIZUMI's YI+ platform — connecting MES, APS, WMS and CMS systems for
+                        transparent, digital, and efficient production management in your factory.</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">06</div>
+                    <div class="why-t">Local Dhaka Presence</div>
+                    <div class="why-d">Headquartered at Eastern Plaza, Hatirpool, Dhaka. Fast response times, local
+                        spare parts, Bangladeshi industry knowledge, and Bengali-speaking technical support.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ ABOUT YIZUMI ══════════════════════════════════════ -->
+    <section class="section" style="background:var(--off)" id="about">
+        <div class="si">
+            <div class="about-grid">
+                <div>
+                    <div class="s-label">About YIZUMI</div>
+                    <h2 class="s-title">Advanced Industrial<br>Molding Equipment<br>System &amp; Service Provider</h2>
+                    <p class="s-desc" style="max-width:100%">Founded in Foshan, China, YIZUMI is a publicly listed
+                        global manufacturer of advanced industrial molding equipment. With a global operation strategy,
+                        YIZUMI deepens its global layout, connects global intelligence resources, and creates value for
+                        customers in 100+ countries. Products span injection molding, rubber injection, die casting, 3D
+                        printing, thixomolding and robotic automation.</p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <div class="about-stat-n">140,000+</div>
+                            <div class="about-stat-l">Machines Operating Worldwide</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-n">200M+</div>
+                            <div class="about-stat-l">Annual R&amp;D Investment (RMB)</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-n">400+</div>
+                            <div class="about-stat-l">Technology Patents</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-n">100+</div>
+                            <div class="about-stat-l">Countries Served</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <h3>YIZUMI Product Ecosystem</h3>
+                    <div class="about-points">
+                        <div class="about-pt">Injection Molding — 25+ series covering all applications and tonnage
+                            ranges</div>
+                        <div class="about-pt">Rubber Injection — YL European &amp; Asian series, LSR &amp; energy sector
+                            specialists</div>
+                        <div class="about-pt">Die Casting — HII-S &amp; LEAP cold-chamber series, 180T to 9,000T</div>
+                        <div class="about-pt">Thixomolding — MGII·Plus for magnesium alloy lightweight manufacturing
+                        </div>
+                        <div class="about-pt">3D Printing — SpaceA industrial pellet printing with robotic integration
+                        </div>
+                        <div class="about-pt">Robotic Automation — complete smart manufacturing cells and turnkey
+                            islands</div>
+                        <div class="about-pt">YIZUMI 4.0 — YI+ platform MES, APS, CMS smart manufacturing software</div>
+                        <div class="about-pt">YIZUMI Green — energy-saving technology and sustainable manufacturing
+                            leadership</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ NEWS ══════════════════════════════════════ -->
+    <section class="section" style="background:white" id="news">
+        <div class="si">
+            <div class="s-header"
+                style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+                <div>
+                    <div class="s-label">Latest from YIZUMI</div>
+                    <h2 class="s-title" style="margin-bottom:0">Industry News &amp; Updates</h2>
+                </div>
+                <a href="https://www.yizumi.com/en/news" target="_blank" class="btn btn-outline"
+                    style="color:var(--teal);border-color:var(--teal);padding:10px 20px;font-size:12px">View All News
+                    ↗</a>
+            </div>
+            <div class="news-grid">
+                <div class="news-card" onclick="window.open('https://www.yizumi.com/en/news','_blank')">
+                    <div class="news-thumb">🏭</div>
+                    <div class="news-body">
+                        <div class="news-date">April 2026</div>
+                        <div class="news-title">YIZUMI CONNECT 2026 — "Evolve Beyond Limits"</div>
+                        <div class="news-excerpt">YIZUMI's global conference brings together industry leaders to explore
+                            the future of advanced molding technologies — from polymer to metal forming across diverse
+                            industries.</div>
+                    </div>
+                </div>
+                <div class="news-card" onclick="window.open('https://www.yizumi.com/en/ims','_blank')">
+                    <div class="news-thumb">⚡</div>
+                    <div class="news-body">
+                        <div class="news-date">April 2026</div>
+                        <div class="news-title">How Electric IMMs Significantly Reduce Energy Costs</div>
+                        <div class="news-excerpt">Compared with traditional hydraulic machines, YIZUMI electric
+                            injection molding machines significantly reduce electricity consumption in high-volume
+                            production with cleaner, more precise operation.</div>
+                    </div>
+                </div>
+                <div class="news-card" onclick="window.open('https://www.yizumi.com/en/news','_blank')">
+                    <div class="news-thumb">🌍</div>
+                    <div class="news-body">
+                        <div class="news-date">March 2026</div>
+                        <div class="news-title">YIZUMI Launches Italian Subsidiary — European Expansion</div>
+                        <div class="news-excerpt">YIZUMI continues its global expansion strategy by establishing a new
+                            subsidiary in Italy, deepening its European market presence and local service capabilities.
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card" onclick="window.open('https://www.yizumi.com/en/news','_blank')">
+                    <div class="news-thumb">🎪</div>
+                    <div class="news-body">
+                        <div class="news-date">March 2026</div>
+                        <div class="news-title">CHINAPLAS 2026 — Join YIZUMI</div>
+                        <div class="news-excerpt">YIZUMI will showcase its latest injection molding innovations at
+                            CHINAPLAS 2026, including the next-generation A6 Series and PS5 high-speed machines. Contact
+                            us for product demos.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ CONTACT ══════════════════════════════════════ -->
+    <section class="section" style="background:var(--off)" id="contact">
+        <div class="si">
+            <div class="s-header">
+                <div class="s-label">Get In Touch</div>
+                <h2 class="s-title">Contact Straight<br>Technologies</h2>
+            </div>
+            <div class="contact-grid">
+                <div>
+                    <div class="c-item">
+                        <div class="c-icon">👤</div>
+                        <div>
+                            <div class="c-lbl">Contact Person</div>
+                            <div class="c-val"><strong>Faiez Abdullah</strong><br>Manager, Straight Technologies</div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon">📱</div>
+                        <div>
+                            <div class="c-lbl">Mobile</div>
+                            <div class="c-val"><a href="tel:+8801732535556">+880 1732-535556</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon">☎️</div>
+                        <div>
+                            <div class="c-lbl">Office</div>
+                            <div class="c-val"><a href="tel:02-44613855">02 44613855</a><br><a
+                                    href="tel:01305498123">01305 498123</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon">✉️</div>
+                        <div>
+                            <div class="c-lbl">Email</div>
+                            <div class="c-val"><a
+                                    href="mailto:faiezabdullah7@gmail.com">faiezabdullah7@gmail.com</a><br><a
+                                    href="mailto:faiez@straighttechbd.com">faiez@straighttechbd.com</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon">📍</div>
+                        <div>
+                            <div class="c-lbl">Address</div>
+                            <div class="c-val">Suite 9 8/16 (7th Floor), Eastern Plaza<br>Hatirpool, Dhaka-1205,
+                                Bangladesh</div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon">🌐</div>
+                        <div>
+                            <div class="c-lbl">Websites</div>
+                            <div class="c-val"><a href="http://www.straighttechbd.com"
+                                    target="_blank">www.straighttechbd.com</a><br><a href="https://www.yizumi.com/en"
+                                    target="_blank">www.yizumi.com/en ↗</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-box">
+                    <div class="form-title">Send an Enquiry</div>
+                    <div id="formBody">
+                        <div class="form-row">
+                            <div class="fgroup"><label class="flbl">Full Name</label><input class="finput" id="fn"
+                                    placeholder="Your name"></div>
+                            <div class="fgroup"><label class="flbl">Company</label><input class="finput" id="fc"
+                                    placeholder="Company name"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="fgroup"><label class="flbl">Phone</label><input class="finput" id="fp"
+                                    placeholder="+880 ..."></div>
+                            <div class="fgroup"><label class="flbl">Email</label><input class="finput" id="fe"
+                                    placeholder="your@email.com" type="email"></div>
+                        </div>
+                        <div class="fgroup">
+                            <label class="flbl">Machine / Equipment of Interest</label>
+                            <select class="finput" id="fm">
+                                <option value="">Select...</option>
+                                <optgroup label="── Injection Molding — Hydraulic ──">
+                                    <option>A6 Series — Next-Gen Intelligent (900–10,000 kN)</option>
+                                    <option>A5-EU Series — High-end Servo (300–7,000 kN)</option>
+                                    <option>A5-N Series — High-end Servo (65–1,125 US Tons)</option>
+                                    <option>SKIII Series — General Purpose</option>
+                                    <option>LS Series — Deep-cavity Product</option>
+                                    <option>U3 Series — Bakelite / Thermoset</option>
+                                </optgroup>
+                                <optgroup label="── Injection Molding — Electric ──">
+                                    <option>FF Series — Full Electric (900–13,800 kN)</option>
+                                    <option>FF-N Series — Full Electric (100–1,510 US Tons)</option>
+                                    <option>FF-M Series — Medical Grade (1,600–3,800 kN)</option>
+                                </optgroup>
+                                <optgroup label="── Injection Molding — Two-Platen ──">
+                                    <option>D1 Series — Two-platen (5,500–40,000 kN)</option>
+                                    <option>D1-N Series — Two-platen (5,500–44,000 kN)</option>
+                                    <option>DP Series — Multi-function Two-platen</option>
+                                    <option>D1M Series — Two-platen Multi-component</option>
+                                </optgroup>
+                                <optgroup label="── Injection Molding — Multi-Component ──">
+                                    <option>CG-P Series — High-end Multi-component (1,600–8,000 kN)</option>
+                                    <option>CE-P Series — Electric Multi-component (1,500–5,500 kN)</option>
+                                    <option>C-NTW Series — Multi-component (1,600–4,800 kN)</option>
+                                </optgroup>
+                                <optgroup label="── Injection Molding — High-Speed ──">
+                                    <option>P Series — High-speed Packaging (2,500–5,500 kN)</option>
+                                    <option>PS5 Series — High-speed 550mm/s (2,800–5,600 kN)</option>
+                                    <option>P-E Series — Servo Electric High-speed</option>
+                                    <option>P-M Series — Medical High-speed</option>
+                                </optgroup>
+                                <optgroup label="── Injection Molding — Special Usage ──">
+                                    <option>SPET Series — PET Preforms (1,600–10,000 kN)</option>
+                                    <option>LSR Series — Liquid Silicone / Rubber</option>
+                                    <option>UPVC &amp; PPR Series — Pipe Fittings</option>
+                                    <option>SJII Series — High-end Thin-wall</option>
+                                    <option>VM Series — Vertical / Insert Molding (600–3,000 kN)</option>
+                                </optgroup>
+                                <optgroup label="── Other Machines ──">
+                                    <option>Rubber Injection Molding Machine (YL Series)</option>
+                                    <option>Blow Molding Machine</option>
+                                    <option>Thermoforming Machine</option>
+                                    <option>Extruder / Pipe Machine</option>
+                                    <option>Plastic Recycling Machine / Line</option>
+                                    <option>Packaging Machine</option>
+                                    <option>Printing Machine</option>
+                                    <option>Die Casting Machine (HII-S / LEAP)</option>
+                                    <option>Robotic Automation / Smart Manufacturing</option>
+                                </optgroup>
+                                <optgroup label="── Auxiliary Equipment ──">
+                                    <option>Hopper Dryer</option>
+                                    <option>Auto Loader / Conveying System</option>
+                                    <option>Chiller / Temperature Control</option>
+                                    <option>Industrial Robot / Take-out Robot</option>
+                                    <option>Crusher / Granulator</option>
+                                    <option>Mold / Tooling Supply</option>
+                                    <option>Complete Production Line</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="fgroup"><label class="flbl">Requirements / Message</label><textarea class="finput"
+                                id="fmsg"
+                                placeholder="Describe your production requirements — material, output, tonnage estimate, product type..."></textarea>
+                        </div>
+                        <button class="fsubmit" onclick="submitForm()">Send Enquiry →</button>
+                    </div>
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">✅</div>
+                        <h4>Enquiry Sent!</h4>
+                        <p>Thank you. Faiez Abdullah will contact you at your provided details within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand-name">Straight <span>Technologies</span></div>
+                <div class="footer-tagline">Official Sole Agent for YIZUMI in Bangladesh.<br>Injection Molding
+                    Specialists &amp; Full Plastic Machinery Solutions.</div>
+                <div class="footer-contact-sm">
+                    📱 <a href="tel:+8801732535556">+880 1732-535556</a><br>
+                    ✉️ <a href="mailto:faiezabdullah7@gmail.com">faiezabdullah7@gmail.com</a><br>
+                    📍 Eastern Plaza, Hatirpool, Dhaka-1205
+                </div>
+            </div>
+            <div>
+                <div class="footer-col-title">Injection Molding</div>
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)"
+                            onclick="switchTab('hydraulic',document.querySelectorAll('.tab')[0]);scrollTo_('im-series')">Toggle
+                            Hydraulic (A6/A5)</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterProducts('electric',null)">All-Electric (FF
+                            Series)</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterProducts('twoplaten',null)">Two-Platen (D1
+                            Series)</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterProducts('multi',null)">Multi-Component</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterProducts('highspeed',null)">High-Speed (PS5/P)</a>
+                    </li>
+                    <li><a href="javascript:void(0)" onclick="filterProducts('special',null)">Special
+                            (LSR/SPET/UPVC)</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Other Products</div>
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('other-machines')">Rubber Injection</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('other-machines')">Blow Molding</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('other-machines')">Die Casting</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('auxiliaries')">Auxiliaries</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('other-machines')">Robotic Automation</a></li>
+                    <li><a href="https://www.yizumi.com/en/ims" target="_blank">YIZUMI IMM Page ↗</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Company</div>
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('about')">About Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('why')">Why Choose Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('news')">News &amp; Updates</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollTo_('contact')">Contact / Quote</a></li>
+                    <li><a href="https://www.yizumi.com/en" target="_blank">YIZUMI Global ↗</a></li>
+                    <li><a href="https://www.yizumi.com/en/about/green" target="_blank">YIZUMI Green ↗</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 Straight Technologies. Official YIZUMI Agent — Bangladesh. All rights
+                reserved.</div>
+            <div class="footer-ext">
+                <a href="https://www.yizumi.com/en" target="_blank">yizumi.com/en ↗</a>
+                <a href="javascript:void(0)" onclick="scrollTo_('contact')">Get a Quote</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══════════════════════════════════════ AUXILIARY MODAL ══════════════════════════════════════ -->
+    <div class="modal-bg" id="auxModal" onclick="closeModalBg(event)">
+        <div class="modal">
+            <button class="modal-x" onclick="closeModal()">✕</button>
+            <div class="modal-icon" id="mIcon"></div>
+            <div class="modal-title" id="mTitle"></div>
+            <div class="modal-sub" id="mSub"></div>
+            <div class="modal-desc" id="mDesc"></div>
+            <div class="modal-specs" id="mSpecs"></div>
+            <button class="modal-enq" onclick="modalEnquire()">Enquire About This Equipment</button>
+        </div>
+    </div>
+
+    <script>
+        // ── DATA ──
+        const products = [
+            // Hydraulic
+            { id: 'a6', cat: 'hydraulic', tag: 'tag-teal', tagTxt: 'Next-Gen Intelligent', name: 'A6 Series Advanced Intelligent IMM', force: '900–10,000 kN', desc: 'IPD 2.0 smart process technology, Industry 4.0 ready. The newest generation of YIZUMI toggle-clamping servo machines.', url: 'https://www.yizumi.com/en/ims/A6-Advanced-And-Intelligent-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2024-12-19/44f29206-3552-470c-b764-db0d05f5d71c1734596718526.png' },
+            { id: 'a5eu', cat: 'hydraulic', tag: 'tag-teal', tagTxt: 'High-end Servo', name: 'A5-EU Series High-end Servo IMM', force: '300–7,000 kN', desc: 'Precision, stability and durability for the European market. High-end servo hydraulic toggle machine.', url: 'https://www.yizumi.com/en/ims/a5-eu-series-high-end-servo-injection-molding-machine', img: 'https://www.yizumi.com/uploads/2023-12-21/3e8d3644-56c4-4200-b944-a92ea2bd45821703154859229.png' },
+            { id: 'a5n', cat: 'hydraulic', tag: 'tag-teal', tagTxt: 'High-end Servo', name: 'A5-N Series High-end Servo IMM', force: '65–1,125 US Tons', desc: 'Optimized injection unit, uniform-stress molding technology. Precision and reliability across all tonnages.', url: 'https://www.yizumi.com/en/ims/a5-n-series-high-end-servo-injection-molding-machine', img: 'https://www.yizumi.com/uploads/2025-07-24/8aa0736e-01b5-4b6f-b77d-18aae6d5dfbe1753328167094.png' },
+            { id: 'sk3', cat: 'hydraulic', tag: 'tag-navy', tagTxt: 'General Purpose', name: 'SKIII Series General Purpose IMM', force: 'Standard Range', desc: 'Reliable, cost-effective general purpose servo hydraulic machine. Broad thermoplastic compatibility.', url: 'https://www.yizumi.com/en/ims/general-purpose_injection_molding_machine', img: 'https://www.yizumi.com/uploads/2023-11-24/d0d6e249-83ff-4ba2-8366-e7e9e7a933051700816565024.png' },
+            { id: 'ls', cat: 'hydraulic', tag: 'tag-navy', tagTxt: 'Deep-Cavity', name: 'LS Series Deep-cavity IMM', force: 'Standard Range', desc: 'Specialized for deep-cavity products: buckets, crates, large containers, bins.', url: 'https://www.yizumi.com/en/ims/LS-SERIES-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2025-06-13/166f1a8f-7681-429a-ba8c-773c94a8e87c1749782176244.png' },
+            { id: 'u3', cat: 'hydraulic', tag: 'tag-gold', tagTxt: 'Bakelite/Thermoset', name: 'U3 Series Bakelite Special IMM', force: '900–4,800 kN', desc: 'Hydraulic toggle for thermoset materials. Integrated feeding system, turnkey solution available.', url: 'https://www.yizumi.com/en/ims/Bakelite_Special_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2023-12-21/fa4a2cae-a9df-4015-bd32-cc5e7bca9bde1703149003565.png' },
+            // Electric
+            { id: 'ff', cat: 'electric', tag: 'tag-teal', tagTxt: 'All-Electric', name: 'FF Series Electric IMM', force: '900–13,800 kN', desc: 'Full electric precision machine. Seamless automation integration, superior shot weight repeatability ±0.1%. Up to 70% energy saving.', url: 'https://www.yizumi.com/en/ims/ff-series-electric-injection-molding-machine', img: 'https://www.yizumi.com/uploads/2022-12-20/6d53a950-95de-442e-b743-06d227391aab1671501537787.png' },
+            { id: 'ffn', cat: 'electric', tag: 'tag-teal', tagTxt: 'All-Electric', name: 'FF-N Series Electric IMM', force: '100–1,510 US Tons', desc: 'North American market electric series. Enhanced quality consistency, efficiency and precision for demanding applications.', url: 'https://www.yizumi.com/en/ims/FF-N_Series_Electric_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2022-12-20/6d53a950-95de-442e-b743-06d227391aab1671501537787.png' },
+            { id: 'ffm', cat: 'electric', tag: 'tag-red', tagTxt: 'Medical Grade', name: 'FF-M Series Medical IMM', force: '1,600–3,800 kN', desc: 'Medical-industry dedicated all-electric machine. Cleanroom compatible. Full R&D to production consultation.', url: 'https://www.yizumi.com/en/ims/Injection_Molding_Machin_for_Medical_Industry', img: 'https://www.yizumi.com/uploads/2023-12-18/4f3ba1cf-16f7-4dcc-9a64-cc93189ba06b1702882646776.png' },
+            // Two-platen
+            { id: 'd1', cat: 'twoplaten', tag: 'tag-navy', tagTxt: 'Two-Platen', name: 'D1 Series Two-platen IMM', force: '5,500–40,000 kN', desc: 'German technology, large-tonnage benchmark. Compact footprint, high mold stroke, precision locking cylinders.', url: 'https://www.yizumi.com/en/ims/D1-Series-Two-platen-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2022-12-14/574417df-a16a-41d6-97b3-275e8da7bd6a1670947766042.png' },
+            { id: 'd1n', cat: 'twoplaten', tag: 'tag-navy', tagTxt: 'Two-Platen', name: 'D1-N Series Two-platen IMM', force: '5,500–44,000 kN', desc: 'North American configuration. Cutting-edge German technology with YIZUMI\'s large-tonnage expertise.', url: 'https://www.yizumi.com/en/ims/D1-N_Series_Two-platen_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2022-12-14/574417df-a16a-41d6-97b3-275e8da7bd6a1670947766042.png' },
+            { id: 'dp', cat: 'twoplaten', tag: 'tag-gold', tagTxt: 'Multi-Function', name: 'DP Series Two-platen IMM', force: '550–4,000 US Tons', desc: 'ICM injection compression, FoamPro microcellular foam, LGF long glass fiber, multi-material micro injection.', url: 'https://www.yizumi.com/en/ims/Injection-Molding-Machine-DP', img: 'https://www.yizumi.com/uploads/2024-09-12/54969abf-b5e5-4a56-be24-44d85f02afab1726131315221.png' },
+            { id: 'd1m', cat: 'twoplaten', tag: 'tag-red', tagTxt: 'Multi-Component', name: 'D1M Two-platen Multi-component', force: '5,000–24,000 kN', desc: 'Leading large-tonnage two-platen multi-component technology. One-step advanced multi-material production.', url: 'https://www.yizumi.com/en/ims/Two-platen_Multi-component_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2023-12-23/d68e2b48-760c-4f2d-9431-e67251456b8c1703313485134.png' },
+            // Multi-component
+            { id: 'cgp', cat: 'multi', tag: 'tag-gold', tagTxt: 'High-end 2K/3K', name: 'CG-P Series Multi-component IMM', force: '1,600–8,000 kN', desc: 'High-end multi-component for quality of life and individualization. Rotary platen, stable, customizable.', url: 'https://www.yizumi.com/en/ims/high-end-multi-component-injection-molding-machine', img: 'https://www.yizumi.com/uploads/2023-12-04/8a82fe60-4f08-4f07-9a40-63558f2024b21701669737186.png' },
+            { id: 'cep', cat: 'multi', tag: 'tag-teal', tagTxt: 'Electric 2K', name: 'CE-P Series Electric Multi-comp IMM', force: '1,500–5,500 kN', desc: 'Electric multi-component for auto parts, medical and 3C electronics. Quiet, energy-efficient, advanced control.', url: 'https://www.yizumi.com/en/ims/High-end_Electric_Multi-component_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2023-12-23/6c4d7ee9-3cfe-4de5-ac72-88a22492bbc71703321212897.png' },
+            { id: 'cntw', cat: 'multi', tag: 'tag-gold', tagTxt: 'Multi-Component', name: 'C-NTW Series Multi-component IMM', force: '1,600–4,800 kN', desc: 'Versatile multi-material injection. Emphasizes stability and customization for vibrant, diverse everyday products.', url: 'https://www.yizumi.com/en/ims/C-NTW_Series_High-end_Multi-component_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2023-12-04/8a82fe60-4f08-4f07-9a40-63558f2024b21701669737186.png' },
+            // High-speed
+            { id: 'p', cat: 'highspeed', tag: 'tag-teal', tagTxt: 'High-Speed Packaging', name: 'P Series High-speed IMM', force: '2,500–5,500 kN', desc: 'Top choice for multi-cavity thin-wall packaging. Turnkey solutions for containers and high production efficiency.', url: 'https://www.yizumi.com/en/ims/P-High-speed-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2024-08-03/160f8071-f214-41e9-a5b6-3dca2c908f591722671401268.png' },
+            { id: 'ps5', cat: 'highspeed', tag: 'tag-red', tagTxt: '5th Gen High-Speed', name: 'PS5 Series High-Speed IMM', force: '2,800–5,600 kN', desc: '5th-generation high-speed machine. Up to 550mm/s injection speed, optimized control, high-rigidity platens.', url: 'https://www.yizumi.com/en/ims/PS5_High-Speed_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2025-06-03/9c0e2e5a-8a0d-4c73-9971-b7f54b0ee7fd1748928876943.png' },
+            { id: 'pe', cat: 'highspeed', tag: 'tag-teal', tagTxt: 'Servo Electric', name: 'P-E Series High-speed IMM', force: '200–350 US Tons', desc: 'Servo electric high-speed. 30–50% energy savings. 2–2.6s dry cycle time. Flexible injection unit configurations.', url: 'https://www.yizumi.com/en/ims/Injection-Molding-Machine-P-E', img: 'https://www.yizumi.com/uploads/2024-09-13/12d53e6c-9b12-4d7d-839d-54de86bd4a031726198055314.png' },
+            { id: 'pm', cat: 'highspeed', tag: 'tag-navy', tagTxt: 'Medical High-Speed', name: 'P-M Series High-speed IMM', force: 'Standard Range', desc: 'Cleanroom medical high-speed machine. 500mm/s injection, precise clamping, reliable cleanroom production.', url: 'https://www.yizumi.com/en/ims/P-M-Medical-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2024-08-15/b1e684a2-71f7-4d51-9e30-bf3ac9e375d51723700948766.png' },
+            // Special
+            { id: 'spet', cat: 'special', tag: 'tag-gold', tagTxt: 'PET Preforms', name: 'SPET Series PET IMM', force: '1,600–10,000 kN', desc: 'Designed for PET bottle preforms and daily storage. 5–10% faster plasticizing, 10–30% energy saving vs standard.', url: 'https://www.yizumi.com/en/ims/Special-usage_Injection_Molding_Machine/SPET-Series-PET-Preform-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2025-06-16/f174876d-2f8b-4c87-b0ad-8209cf6671dd1750042991953.png' },
+            { id: 'lsr', cat: 'special', tag: 'tag-red', tagTxt: 'Liquid Silicone', name: 'LSR Series Liquid Silicone IMM', force: 'Standard Range', desc: 'Cold runner liquid silicone injection. Vacuum venting, medical-grade, precise vulcanization and solidification.', url: 'https://www.yizumi.com/en/ims/Special-usage_Injection_Molding_Machine/Liquid_Silicone_Injection_Molding_Machine', img: 'https://www.yizumi.com/uploads/2023-12-07/f039af18-5dc3-4ba5-a47e-2845e10a66821701928619393.png' },
+            { id: 'upvc', cat: 'special', tag: 'tag-navy', tagTxt: 'Pipe Fittings', name: 'UPVC & PPR Series IMM', force: 'UPVC: 2,000–7,500 kN / PPR: 1,600–26,000 kN', desc: 'Complex pipe fitting production with high precision. Ideal for plumbing and construction industry.', url: 'https://www.yizumi.com/en/ims/Special-usage_Injection_Molding_Machine/Special_Injection_Molding_Machine_For_Pipe_Fitting', img: 'https://www.yizumi.com/uploads/2023-12-07/f039af18-5dc3-4ba5-a47e-2845e10a66821701928619393.png' },
+            { id: 'sjii', cat: 'special', tag: 'tag-gold', tagTxt: 'Thin-Wall', name: 'SJII Series Thin-wall IMM', force: '900–1,600 kN', desc: 'High-end thin-wall product specialization. Showcases YIZUMI\'s market expertise with expanded applications.', url: 'https://www.yizumi.com/en/ims/Special-usage_Injection_Molding_Machine/Injection_Molding_Machine_For_High-end_Thin-wall_Product', img: 'https://www.yizumi.com/uploads/2023-12-07/f039af18-5dc3-4ba5-a47e-2845e10a66821701928619393.png' },
+            // Vertical
+            { id: 'vm', cat: 'vertical', tag: 'tag-navy', tagTxt: 'Vertical / Insert', name: 'VM Series Vertical IMM', force: '600–3,000 kN', desc: 'Vertical injection axis for insert molding. High rigidity direct clamping. Ideal for connectors, wire harnesses, terminals.', url: 'https://www.yizumi.com/en/ims/Vertical-Plastic-Injection-Molding-Machine', img: 'https://www.yizumi.com/uploads/2024-01-09/7c33b380-c088-4110-8f68-fcb50edcfa251704791567730.png' },
+        ];
+
+        const auxData = {
+            hopper: { icon: '🌡️', title: 'Hopper Dryer', sub: 'Material Pre-drying System', desc: 'Removes moisture from hygroscopic plastic granules (PET, PA, PC, ABS etc.) before they enter the injection molding machine. Prevents splay marks, silver streaks, bubbles and thermal degradation in molded parts. Critical for quality output with engineering plastics.', specs: [['30–1000 kg', 'Capacity Range'], ['80–180°C', 'Temperature Range'], ['Insulated', 'Hopper Design'], ['PID Digital', 'Control System']] },
+            loader: { icon: '🔄', title: 'Auto Loader', sub: 'Automated Material Feeding', desc: 'Vacuum conveying system automatically transfers plastic granules from material storage bins to the machine hopper. Eliminates manual handling, reduces contamination risk and enables continuous unattended production on single or multiple machines.', specs: [['Vacuum', 'Transfer Method'], ['100–3000g', 'Load Capacity'], ['Auto-level', 'Trigger Mode'], ['Filter', 'Dust Control']] },
+            chiller: { icon: '❄️', title: 'Industrial Chiller', sub: 'Precision Cooling System', desc: 'Industrial water chillers provide precise temperature-controlled cooling for injection mold circuits, hydraulic oil, and process water. Consistent mold temperature is critical for dimensional accuracy, cycle time optimization, surface quality and part ejection.', specs: [['±0.5°C', 'Accuracy'], ['Air / Water', 'Cooling Type'], ['5°C–25°C', 'Set Point'], ['CFC-free', 'Refrigerant']] },
+            mold: { icon: '🏭', title: 'Mold / Tooling', sub: 'Custom Injection Mold Supply', desc: 'We source and supply custom injection molds compatible with YIZUMI machines — single cavity, multi-cavity, hot runner and cold runner designs in P20 and H13 tool steel. Our team coordinates design review, steel selection, mold trials and acceptance.', specs: [['P20 / H13', 'Steel Grade'], ['Hot / Cold', 'Runner Types'], ['1–64+', 'Cavity Options'], ['Trial run', 'Included']] },
+            robot: { icon: '🤖', title: 'Robot / Take-out', sub: 'Injection Molding Automation', desc: 'Linear traverse robots and 6-axis articulated robots for automatic part removal from injection molding machines, insert placement, post-mold stacking, conveyor feeding and downstream assembly automation.', specs: [['Linear / 6-axis', 'Robot Type'], ['< 1.5s', 'Take-out Time'], ['Servo', 'Drive System'], ['Teach pendant', 'Programming']] },
+            crusher: { icon: '⚗️', title: 'Crusher / Granulator', sub: 'In-line Scrap Processing', desc: 'Inline granulators and central crushers reduce plastic sprues, runners and reject parts back into uniform regrind pellets suitable for immediate reuse in production. Critical for minimizing material waste and production costs.', specs: [['5–200 kg/h', 'Throughput'], ['3–8 mm', 'Regrind Size'], ['Low noise', 'Sound Design'], ['Quick-open', 'Rotor Access']] },
+            conveyor: { icon: '🔀', title: 'Conveying System', sub: 'Central Material Transport', desc: 'Centralized pneumatic conveying systems transport plastic granules from silos or storage bins to multiple injection or extrusion machines simultaneously. Completely eliminates manual material handling, reducing contamination and labor costs.', specs: [['Central', 'System Type'], ['Pneumatic', 'Transport'], ['Multi-point', 'Distribution'], ['Stainless', 'Contact Parts']] },
+            tempcontrol: { icon: '🌊', title: 'Mold Temp Controller', sub: 'Hot Water / Oil Heating', desc: 'Mold temperature controllers circulate heated water or oil through the mold to maintain precise elevated temperatures. Essential for engineering plastics (PC, PA, POM) that require warm molds for proper filling, surface finish and crystallization.', specs: [['Water / Oil', 'Medium Type'], ['Up to 180°C', 'Max Temperature'], ['±1°C', 'Control Accuracy'], ['Pump + Heater', 'System Includes']] },
+        };
+
+        let currentModalEquip = '';
+
+        // ── RENDER PRODUCTS ──
+        function renderProducts(filter) {
+            const grid = document.getElementById('productsGrid');
+            const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+            grid.innerHTML = filtered.map(p => `
+    <div class="prod-card" onclick="enquireProduct('${p.name.replace(/'/g, "\\'")}')">
+      ${p.img ? `<img class="prod-img" src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">` : ''}
+      <div class="prod-card-top">
+        <span class="prod-tag ${p.tag}">${p.tagTxt}</span>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-force">${p.force}</div>
+        <div class="prod-desc">${p.desc}</div>
+      </div>
+      <div class="prod-card-footer">
+        <button class="prod-enquire" onclick="event.stopPropagation();enquireProduct('${p.name.replace(/'/g, "\\'")}')">Enquire →</button>
+        <a class="prod-yizumi-link" href="${p.url}" target="_blank" onclick="event.stopPropagation()">YIZUMI ↗</a>
+      </div>
+    </div>
+  `).join('');
+        }
+
+        function filterProducts(cat, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderProducts(cat || 'all');
+            scrollTo_('catalog');
+        }
+
+        // ── TABS ──
+        function switchTab(id, btn) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            const panel = document.getElementById('tab-' + id);
+            if (panel) panel.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+
+        // ── AUX MODAL ──
+        function openAux(key) {
+            const d = auxData[key]; currentModalEquip = d.title;
+            document.getElementById('mIcon').textContent = d.icon;
+            document.getElementById('mTitle').textContent = d.title;
+            document.getElementById('mSub').textContent = d.sub;
+            document.getElementById('mDesc').textContent = d.desc;
+            document.getElementById('mSpecs').innerHTML = d.specs.map(s => `<div class="mspec"><div class="mspec-v">${s[0]}</div><div class="mspec-k">${s[1]}</div></div>`).join('');
+            document.getElementById('auxModal').classList.add('open');
+        }
+        function closeModal() { document.getElementById('auxModal').classList.remove('open') }
+        function closeModalBg(e) { if (e.target === document.getElementById('auxModal')) closeModal() }
+        function modalEnquire() {
+            closeModal();
+            const sel = document.getElementById('fm');
+            for (let i = 0; i < sel.options.length; i++) { if (sel.options[i].text.toLowerCase().includes('hopper') || sel.options[i].text.toLowerCase().includes('auxiliary')) { sel.selectedIndex = i; break } }
+            document.getElementById('fmsg').value = 'I am interested in: ' + currentModalEquip;
+            scrollTo_('contact');
+        }
+
+        // ── ENQUIRE ──
+        function enquireProduct(name) {
+            const sel = document.getElementById('fm');
+            const nameLow = name.toLowerCase();
+            let bestIdx = 0, bestScore = 0;
+            for (let i = 1; i < sel.options.length; i++) {
+                const optLow = sel.options[i].text.toLowerCase();
+                // score by word overlap
+                const words = nameLow.split(/\s+/).filter(w => w.length > 2);
+                let score = words.filter(w => optLow.includes(w)).length;
+                if (score > bestScore) { bestScore = score; bestIdx = i; }
+            }
+            if (bestScore > 0) sel.selectedIndex = bestIdx;
+            scrollTo_('contact');
+        }
+
+        function appEnquire(appName, note) {
+            document.getElementById('fmsg').value = 'Application: ' + appName + '\n\nI am looking for: ' + note + '\n\nPlease recommend the right YIZUMI machine for my requirements.';
+            scrollTo_('contact');
+        }
+
+        // ── FORM ──
+        function submitForm() {
+            const n = document.getElementById('fn').value.trim();
+            const p = document.getElementById('fp').value.trim();
+            const e = document.getElementById('fe').value.trim();
+            if (!n || (!p && !e)) { alert('Please fill in your name and at least one contact detail.'); return }
+            document.getElementById('formBody').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        }
+
+        // ── NAV ──
+        function toggleMobile() { document.getElementById('mobileNav').classList.toggle('open') }
+        function closeMobile() { document.getElementById('mobileNav').classList.remove('open') }
+        document.addEventListener('click', function (e) {
+            const nav = document.getElementById('mobileNav');
+            if (nav.classList.contains('open') && !e.target.closest('nav') && !e.target.closest('#mobileNav')) closeMobile();
+        });
+
+        function scrollTo_(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top + window.scrollY - 72;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+
+        // ── INIT ──
+        renderProducts('all');
+    </script>
+</body>
